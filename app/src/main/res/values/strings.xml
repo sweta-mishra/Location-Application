@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">LocationPage</string>
+    <string name="public_auction">Public Auction</string>
+    <string name="filter">FILTER</string>
+    <string-array name="SORT">
+        <item>Price</item>
+        <item>Model</item>
+    </string-array>
+</resources>
