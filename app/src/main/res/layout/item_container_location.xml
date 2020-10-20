@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginLeft="10dp" />
 
-    <com.makeramen.roundedimageview.RoundedImageView
+    <ImageView
         android:id="@+id/imageLocaton"
         android:layout_width="110dp"
         android:layout_height="152dp"
@@ -33,7 +33,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textName"
-        app:riv_corner_radius="6dp" />
+        />
 
     <TextView
         android:id="@+id/textAddress"
@@ -58,18 +58,22 @@
         android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageLocaton"
-        app:layout_constraintTop_toBottomOf="@+id/textAddress" />
+        app:layout_constraintTop_toBottomOf="@+id/textAddress"
+        android:text="@string/next_auction"/>
 
-    <Button
-        android:id="@+id/buttonPublicAuction"
+    <TextView
+        android:id="@+id/publicAuction"
         android:layout_width="151dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:background="?attr/colorButtonNormal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.094"
         app:layout_constraintStart_toEndOf="@+id/imageLocaton"
         app:layout_constraintTop_toBottomOf="@+id/textNextAuction"
         tools:text="@string/public_auction" />
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

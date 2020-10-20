@@ -2,6 +2,10 @@
     <string name="app_name">LocationPage</string>
     <string name="public_auction">Public Auction</string>
     <string name="filter">FILTER</string>
+    <string name="sort">Sort</string>
+    <string name="filter_by_branch_location_or_state">Filter by Branch,Location or State</string>
+    <string name="SORT">SORT</string>
+    <string name="next_auction">Next Auction</string>
     <string-array name="SORT">
         <item>Price</item>
         <item>Model</item>
