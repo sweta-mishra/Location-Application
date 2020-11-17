@@ -1,12 +1,18 @@
 package com.example.locationpage;
 
-import android.media.Image;
+import android.content.Context;
+import android.nfc.Tag;
+import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
@@ -15,17 +21,24 @@ import java.util.List;
 
 public class LocationsAdapter extends RecyclerView.Adapter<LocationsAdapter.RecyclerViewHolder> {
 
+
     private static final int TYPE_HEAD = 0;
     private static final int TYPE_LIST = 1;
+    private final Context context;
+
+
 
     private List<Location> locations;
     //private List<Header> headers;
     private LocationListener locationListener;
 
-    public LocationsAdapter(List<Location> locations, LocationListener locationListener) {
+    public LocationsAdapter(Context context, List<Location> locations, LocationListener locationListener) {
+        this.context = context;
         this.locations = locations;
         this.locationListener = locationListener;
+
     }
+
     /*public LocationsAdapter(List<Header> headers){
         this.headers = headers;
     }*/
@@ -58,6 +71,8 @@ public class LocationsAdapter extends RecyclerView.Adapter<LocationsAdapter.Recy
             recyclerViewHolder = new RecyclerViewHolder(itemView,viewType);
 
             return recyclerViewHolder;
+
+
 
         }
         else return null;
@@ -114,7 +129,9 @@ public class LocationsAdapter extends RecyclerView.Adapter<LocationsAdapter.Recy
         //Variables for the list
         ConstraintLayout layoutLocation;
         ImageView imageLocation;
-        TextView textName,textAddress,textNextAuction;
+        TextView textName,textAddress,textAuctionDate;
+        TextView salesList;
+        LinearLayout containerAuction;
 
         //Variables for the head section
         EditText search;
@@ -129,8 +146,35 @@ public class LocationsAdapter extends RecyclerView.Adapter<LocationsAdapter.Recy
                 imageLocation = itemView.findViewById(R.id.imageLocaton);
                 textName = itemView.findViewById(R.id.textName);
                 textAddress = itemView.findViewById(R.id.textAddress);
-                textNextAuction= itemView.findViewById(R.id.textNextAuction);
+                textAuctionDate= itemView.findViewById(R.id.textNextAuction);
+                salesList = itemView.findViewById(R.id.textSaleLists);
+                containerAuction = itemView.findViewById(R.id.container_Auction);
                 view_type = 1;
+
+
+
+                salesList.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                        /*LayoutInflater vi = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                        View v = vi.inflate(R.layout.upcoming_auctions,null);
+                        containerAuction.addView(v);*/
+                        LayoutInflater inflater = LayoutInflater
+                                .from(context);
+                        View v = inflater.inflate(R.layout.upcoming_auctions, null);
+                        containerAuction.addView(v);
+
+
+
+
+                        //Log.i("Info", "TextView Pressed");
+
+                        
+
+
+                    }
+                });
 
             }
 
@@ -149,16 +193,16 @@ public class LocationsAdapter extends RecyclerView.Adapter<LocationsAdapter.Recy
             imageLocation.setImageResource(location.image);
             textName.setText(location.name);
             textAddress.setText(location.address);
-            textNextAuction.setText(location.auctionDate);
+            textAuctionDate.setText(location.auctionDate);
 
 
 
         }
-        void bindHeader(final Header header) {
+     /*   void bindHeader(final Header header) {
             search.setText(header.search);
             sort.setText(header.sort);
             filter.setText(header.filter);
-        }
+        }*/
     }
 }
 

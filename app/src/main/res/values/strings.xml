@@ -6,6 +6,9 @@
     <string name="filter_by_branch_location_or_state">Filter by Branch,Location or State</string>
     <string name="SORT">SORT</string>
     <string name="next_auction">Next Auction</string>
+    <string name="_555_555_5555">(555)555-5555</string>
+    <string name="directions">Directions</string>
+    <string name="sale_lists">Sale Lists</string>
     <string-array name="SORT">
         <item>Price</item>
         <item>Model</item>

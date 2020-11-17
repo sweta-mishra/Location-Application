@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/layoutAuction"
+    android:layout_margin="5dp"
+    >
+
+
+    <ImageView
+        android:id="@+id/imageDate"
+        android:layout_width="101dp"
+        android:layout_height="89dp"
+        android:contentDescription="@string/app_name"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textDay"
+        android:layout_width="297dp"
+        android:layout_height="27dp"
+        android:ellipsize="end"
+        android:textSize="15sp"
+        android:drawableRight="@drawable/ic_arrow_forward"
+        android:drawablePadding="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/textTotalVehicle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageDate" />
+
+    <TextView
+        android:id="@+id/textTotalVehicle"
+        android:layout_width="297dp"
+        android:layout_height="27dp"
+        android:ellipsize="end"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageDate"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

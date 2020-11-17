@@ -23,17 +23,15 @@
 
     <ImageView
         android:id="@+id/imageLocaton"
-        android:layout_width="110dp"
-        android:layout_height="152dp"
+        android:layout_width="101dp"
+        android:layout_height="89dp"
         android:layout_marginStart="15dp"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="8dp"
         android:contentDescription="@string/app_name"
         android:scaleType="centerCrop"
-        app:layout_constraintTop_toBottomOf="@+id/textName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textName"
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textName" />
 
     <TextView
         android:id="@+id/textAddress"
@@ -47,6 +45,7 @@
         app:layout_constraintStart_toEndOf="@+id/imageLocaton"
         app:layout_constraintTop_toBottomOf="@+id/textName"
         />
+
 
     <TextView
         android:id="@+id/textNextAuction"
@@ -66,13 +65,61 @@
         android:layout_width="151dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:background="?attr/colorButtonNormal"
+        android:background="#E3DDDD"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.094"
         app:layout_constraintStart_toEndOf="@+id/imageLocaton"
         app:layout_constraintTop_toBottomOf="@+id/textNextAuction"
         tools:text="@string/public_auction" />
 
+    <TextView
+        android:id="@+id/textPhoneNumber"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:drawableLeft="@drawable/ic_call"
+        android:drawablePadding="5dp"
+        android:text="@string/_555_555_5555"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageLocaton" />
+
+    <TextView
+        android:id="@+id/textDirection"
+        android:layout_width="127dp"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/ic_direction"
+        android:drawablePadding="5dp"
+        android:text="@string/directions"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textPhoneNumber" />
+
+    <TextView
+        android:id="@+id/textSaleLists"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:drawableRight="@drawable/ic_arrow_down"
+        android:drawablePadding="5dp"
+        android:text="@string/sale_lists"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textDirection"
+        android:clickable="true"
+        android:onClick="perform_action"
+        android:focusable="true" />
+
+
+    <LinearLayout
+        android:id="@+id/container_Auction"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone"
+        >
+
+        <!-- Inflate multiple xml file here -->
+
+    </LinearLayout>
 
 
 
