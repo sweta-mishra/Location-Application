@@ -29,7 +29,7 @@ public class LocationsAdapter extends RecyclerView.Adapter<LocationsAdapter.Recy
 
 
     private List<Location> locations;
-    //private List<Header> headers;
+
     private LocationListener locationListener;
 
     public LocationsAdapter(Context context, List<Location> locations, LocationListener locationListener) {
@@ -39,9 +39,7 @@ public class LocationsAdapter extends RecyclerView.Adapter<LocationsAdapter.Recy
 
     }
 
-    /*public LocationsAdapter(List<Header> headers){
-        this.headers = headers;
-    }*/
+
 
     @NonNull
     @Override
@@ -81,7 +79,7 @@ public class LocationsAdapter extends RecyclerView.Adapter<LocationsAdapter.Recy
     @Override
     public void onBindViewHolder(@NonNull RecyclerViewHolder holder, int position) {
 
-       // Location mlocation = locations.get(position);
+
 
 
         if(holder.view_type == TYPE_HEAD){
@@ -157,15 +155,10 @@ public class LocationsAdapter extends RecyclerView.Adapter<LocationsAdapter.Recy
                     @Override
                     public void onClick(View view) {
 
-                        /*LayoutInflater vi = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-                        View v = vi.inflate(R.layout.upcoming_auctions,null);
-                        containerAuction.addView(v);*/
                         LayoutInflater inflater = LayoutInflater
                                 .from(context);
                         View v = inflater.inflate(R.layout.upcoming_auctions, null);
                         containerAuction.addView(v);
-
-
 
 
                         //Log.i("Info", "TextView Pressed");
@@ -198,11 +191,7 @@ public class LocationsAdapter extends RecyclerView.Adapter<LocationsAdapter.Recy
 
 
         }
-     /*   void bindHeader(final Header header) {
-            search.setText(header.search);
-            sort.setText(header.sort);
-            filter.setText(header.filter);
-        }*/
+
     }
 }
 
